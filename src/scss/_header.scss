@@ -72,9 +72,11 @@
 .icons {
   @extend %flex-between-center;
   width: 180px;
+
   &__icon {
     transition: $transition;
   }
+
   &__icon:hover {
     transform: scale(1.1);
   }
@@ -184,14 +186,40 @@
       padding: 30px 0;
       align-items: center;
     }
-  }
 
-  // -----------------------------------------------
-  // MENU
-  // -----------------------------------------------
-  .menu {
-    & {
-      display: none;
+    // -----------------------------------------------
+    // MENU
+    // -----------------------------------------------
+    &__menu {
+      position: absolute;
+      transform: translate(1000px);
+      transition: all 0.5s ease;
+      right: 0;
+      top: 100%;
+      background: #f58021;
+      flex-direction: column;
+      align-items: end;
+      width: 250px;
+
+      .menu {
+        &__list {
+          flex-direction: column;
+          align-items: end;
+        }
+
+        &__link {
+          font-size: 22px;
+          line-height: 34px;
+        }
+
+        &__icons {
+          margin: 20px;
+        }
+      }
+
+      &.active {
+        transform: translate(0px);
+      }
     }
   }
 }

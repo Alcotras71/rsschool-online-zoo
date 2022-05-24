@@ -253,7 +253,7 @@ class Select {
   }
 
   #render() {
-    const { placeholder, data } = this.options;
+    const {placeholder, data} = this.options;
     this.$el.classList.add("select");
     this.$el.innerHTML = getTemplate(data, placeholder);
   }
@@ -265,7 +265,7 @@ class Select {
   }
 
   clickHandler(e) {
-    const { type } = e.target.dataset;
+    const {type} = e.target.dataset;
     if (type === "input") {
       this.toggle();
     } else if (type === "item") {
@@ -319,18 +319,18 @@ class Select {
 // ------------------.....................----------------------------
 
 function slider({
-  container,
-  slide,
-  prevArrow,
-  nextArrow,
-  field,
-  numSlidesToChange,
-  slidesPerView,
-  interval = false,
-  timer,
-  timerDelay,
-  direction = "horizontal",
-}) {
+                  container,
+                  slide,
+                  prevArrow,
+                  nextArrow,
+                  field,
+                  numSlidesToChange,
+                  slidesPerView,
+                  interval = false,
+                  timer,
+                  timerDelay,
+                  direction = "horizontal",
+                }) {
   const slider = document.querySelector(container),
     slidesField = slider.querySelectorAll(field),
     slides = slidesField[0].querySelectorAll(slide),
@@ -473,3 +473,14 @@ class Sidebar {
     this.$sidebar.classList.remove("open");
   }
 }
+
+
+/// Activate burger
+
+const burger = document.querySelector('.burger');
+const headerMenu = document.querySelector('.header__menu')
+
+burger.addEventListener('click', () => {
+  burger.classList.toggle('burger--active');
+  headerMenu.classList.toggle('active')
+});
