@@ -1,0 +1,116 @@
+//- ZOOS CAMS---------------------------------------
+mixin viewsSlide(src, i, active)
+  .views-slider__slide
+    .views-slider__video-wrapper
+      .views-slider__live cam #{i + 1}
+      img.views-slider__video(class={'views-slider__video--active': active} src=`${src[0]}`, alt=`${src[1]}`)
+      .views-slider__btn
+
+mixin zoos-cams(camsTitle, iFrameSrc, sliderTitle, srcArr)
+  .zoos-cams__wrapper
+    +asideMobile(imgClass, zoosUrl, textArr, activeUrl)
+    section.zoos-cams
+      .container
+        .zoos-cams__inner-top
+          h3.title.zoos-cams__title #{camsTitle}
+          .btn.zoos-cams__btn donate now
+        .zoos-cams__video-wrapper
+          iframe.zoos-cams__video(src=`${iFrameSrc}` title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+          .zoos-cams__hidden-block
+    //end zoos-cams section
+    .views-slider__title #{sliderTitle}
+    .zoos-cams__views.views-slider
+      .views-slider__wrapper
+        each src,i in srcArr
+          if (i === 0)
+            +viewsSlide(src, i, true)
+          else
+            +viewsSlide(src,i)
+      .views-slider__navigation.views-nav
+        .views-nav__prev
+        .views-nav__next
+
+//- ASIDE ----------------------------------------
+mixin asideItem(imgClass, url, text, activeUrl)
+  li.aside__item
+    a.aside__animal(class=`aside__animal--${imgClass}` class={'aside__animal--active': activeUrl} href=`${url}`)
+    p.aside__text #{text}
+
+mixin aside(imgClass, urlArr, textArr, activeUrl)
+  //start aside
+  aside.aside.aside__desktop
+    .aside__inner
+      .aside__live LIVE
+      .aside__btn
+      .aside__wrapper
+        ul.aside__list
+          - for (let i = 0; i < imgClass.length; i++)
+            if (i == 0)
+              +asideItem(imgClass[i], urlArr[i], textArr[i], activeUrl)
+            else
+              +asideItem(imgClass[i], urlArr[i], textArr[i])
+      .aside__arrow
+  //end aside
+
+mixin asideMobile(imgClass, urlArr, textArr, activeUrl)
+  //start aside
+  aside.aside.aside__mobile
+    .aside__inner
+      .aside__live LIVE
+      .aside__btn
+      .aside__wrapper
+        ul.aside__list
+          - for (let i = 0; i < imgClass.length; i++)
+            if (i == 0)
+              +asideItem(imgClass[i], urlArr[i], textArr[i], activeUrl)
+            else
+              +asideItem(imgClass[i], urlArr[i], textArr[i])
+      .aside__arrow.aside__arrow-mobile
+  //end aside
+
+//- DONATION --------------------------------------
+mixin donate(title, text)
+  // start donation section
+  section.donation.zoos-donation
+    .donation__wrapper.zoos-donation__wrapper
+      .container
+        .donation__inner.zoos-donation__inner
+          .donation__inner-text.zoos-donation__inner-text
+            h3.donation__title.zoos-donation__title #{title}
+            p.text.donation__text.zoos-donation__text #{text}
+          .donate.donation__inner-donate.zoos-donation__inner-donate
+            p.donate__title Quick Donate
+            .donate-btn.donate__btn
+              input.donate-btn__input(type="number" name="number" min="0" max="9999" placeholder="Donation Amount")
+              button.donate-btn__btn
+  // end donation section
+
+
+//- KNOW SECTION -----------------------------------
+mixin statItem(arr, link)
+  dl.animal-stat__inner
+    dt.animal-stat__name #{arr[0]}
+    dd.animal-stat__descr #{arr[1]}
+    if (link)
+      a.btn.btn--outline-orange.animal-stat__btn-text(href="/pages/map") VIEW map
+
+
+mixin zoos-know(remarkTitle, remarkText, namesArr, src, alt, statText)
+  //start zoos-know section
+  section.zoos-know
+    .container
+      .zoos-remark.zoos-know__remark
+        .zoos-remark__title #{remarkTitle}
+        .subtitle.zoos-remark__subtitle #{remarkText}
+      .about-animal.zoos-know__about-animal
+        .zoos-know__about-inner
+          .about-animal__stat.animal-stat
+            each arr,i in namesArr
+              if (namesArr.length - 1 === i)
+                +statItem(arr, true)
+              else
+                +statItem(arr)
+          .about-animal__image-wrapper
+            img.about-animal__image(src=`${src}` alt=`${alt}`)
+        p.text.animal-stat__text #{statText}
+  //end zoos-know section

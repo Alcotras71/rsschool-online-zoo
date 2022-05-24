@@ -1,0 +1,56 @@
+$white: #ffffff;
+$black: #000000;
+$navy: #20113d;
+$orange: #f58021;
+$light-orange: #efac76;
+$dark-orange: #d26004;
+$light-aqua: #80cfc8;
+$aqua: #00a092;
+$dark-aqua: #05786e;
+
+$transition: all 0.5s ease;
+$assets: "../../assets";
+$assets-z: "../../assets";
+
+%flex-between-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+%after-arrow {
+  content: "";
+  width: 25px;
+  height: 22px;
+  position: absolute;
+  background: {
+    image: url("../../assets/icons/btn-arrow.svg");
+    repeat: no-repeat;
+    position: right;
+  }
+}
+
+%absolute-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin animal($name, $dir, $hover: "") {
+  @if $hover != "" {
+    &--#{$name}#{$hover}:after {
+      background: url("#{$assets-z}/icons/#{$dir}/#{$name}-active.svg") no-repeat center;
+      transition: $transition;
+    }
+  } @else {
+    &--#{$name}:after {
+      background: url("#{$assets-z}/icons/#{$dir}/#{$name}.svg") no-repeat center;
+      transition: $transition;
+    }
+
+    &--#{$name}.aside__animal--active:after {
+      background: url("#{$assets-z}/icons/#{$dir}/#{$name}-active.svg") no-repeat center;
+      transition: $transition;
+    }
+  }
+}

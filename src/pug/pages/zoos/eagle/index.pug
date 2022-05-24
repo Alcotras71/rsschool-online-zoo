@@ -1,0 +1,16 @@
+extends ../../../layouts/main.pug
+
+block variables
+  - const currentUrl = '/zoos';
+  - const imgUrl = "../../../assets";
+  - const cssUrl = "../main.css";
+  - const jsUrl = "../script.js";
+  - const generalJs = "../../script.js";
+
+block content
+  .wrapper
+    article.zoos
+      include ../../../sections/zoos/eagle/_eagle-aside.pug
+      include ../../../sections/zoos/eagle/_eagle-cam.pug
+      include ../../../sections/zoos/eagle/_eagle-donate.pug
+      include ../../../sections/zoos/eagle/_eagle-know.pug

@@ -1,0 +1,36 @@
+.popupCare {
+  &__content {
+    max-width: 1160px;
+  }
+
+  &__title,
+  &__text {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__title {
+    color: $orange;
+    max-width: 678px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    max-width: 570px;
+    margin-bottom: 50px;
+  }
+
+  &__btn-wrapper {
+    padding: 0 80px;
+    margin-bottom: 50px;
+  }
+
+  &__btn {
+    background: $aqua;
+
+    &:hover {
+      background: $dark-aqua;
+    }
+  }
+}

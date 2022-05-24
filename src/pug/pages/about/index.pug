@@ -1,0 +1,19 @@
+extends ../../layouts/main.pug
+
+block variables
+  - const currentUrl = '/about';
+  - const imgUrl = "../../assets";
+  - const cssUrl = "main.css";
+  - const jsUrl = "script.js";
+  - const generalJs = "../script.js";
+
+block content
+  .wrapper
+      main.main
+        include ../../sections/about/_favorite-animal.pug
+        include ../../sections/about/_welcome.pug
+        include ../../sections/about/_donation.pug
+        include ../../sections/about/_meet-pets.pug
+        include ../../sections/about/_pay-feed.pug
+        include ../../sections/about/_think.pug
+        include ../../sections/about/_care.pug

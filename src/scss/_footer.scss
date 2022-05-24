@@ -1,0 +1,228 @@
+// ----------------------------------------------------------------------
+// FOOTER
+// ----------------------------------------------------------------------
+.footer {
+  background: $navy;
+
+  &__wrapper {
+    max-width: 1480px;
+    margin: 0 auto;
+    padding: 70px 40px 36px;
+  }
+
+  &__inner {
+    @extend %flex-between-center;
+  }
+
+  &__subline {
+    padding-bottom: 70px;
+    border-bottom: 1px solid $white;
+    margin-bottom: 37px;
+  }
+
+  &__labels {
+    width: 415px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__menu {
+    width: 426px;
+    .menu__link {
+      color: $white;
+    }
+    .menu__link:hover {
+      color: $aqua;
+    }
+  }
+
+  &__icons {
+    width: 200px;
+  }
+}
+
+// ----------------------------------------------------------------------
+// TAGS
+// ----------------------------------------------------------------------
+.tags {
+  color: $white;
+
+  &__list {
+    width: 450px;
+    @extend %flex-between-center;
+  }
+}
+
+// --------------------------------------------------------------------------------------------------------------------------------------
+// MEDIA 1440
+// --------------------------------------------------------------------------------------------------------------------------------------
+@media (max-width: 1440px) {
+  // -----------------------------------------------
+  // FOOTER
+  // -----------------------------------------------
+  .footer {
+    &__wrapper {
+      padding: 70px 00px 36px;
+    }
+
+    &__inner {
+      padding: 0 40px;
+    }
+
+    &__menu-list {
+      width: 350px;
+      max-width: 350px;
+    }
+
+    &__labels {
+      width: 344px;
+      max-width: 356px;
+    }
+
+    &__menu {
+      width: auto;
+      justify-content: center;
+    }
+
+    &__btn {
+      padding-left: 66px;
+      padding: 26px 66px 24px 35px;
+    }
+  }
+}
+
+// --------------------------------------------------------------------------------------------------------------------------------------
+// MEDIA 980
+// --------------------------------------------------------------------------------------------------------------------------------------
+@media (max-width: 980px) {
+  // -----------------------------------------------
+  // FOOTER
+  // -----------------------------------------------
+  .footer {
+    &__subline {
+      padding-bottom: 47px;
+      margin-bottom: 50px;
+    }
+
+    &__inner {
+      display: block;
+    }
+
+    &__menu {
+      display: block;
+    }
+
+    &__labels,
+    &__menu-list {
+      width: auto;
+      max-width: 445px;
+      margin: 0 auto;
+    }
+
+    &__labels {
+      margin-bottom: 50px;
+    }
+
+    &__menu-list {
+      margin-bottom: 45px;
+    }
+
+    &__btn {
+      margin: 0 auto;
+      display: block;
+    }
+
+    &__wrapper {
+      padding: 50px 00px 36px;
+    }
+
+    &__inner-bottom {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      justify-content: center;
+    }
+
+    &__icons {
+      grid-row: 1/1;
+      margin: 0 auto;
+      width: 220px;
+      margin-bottom: 17px;
+    }
+  }
+}
+
+// --------------------------------------------------------------------------------------------------------------------------------------
+// MEDIA 600
+// --------------------------------------------------------------------------------------------------------------------------------------
+@media (max-width: 600px) {
+  // -----------------------------------------------
+  // FOOTER
+  // -----------------------------------------------
+  .footer {
+    &__wrapper {
+      padding-bottom: 18px;
+    }
+
+    &__labels {
+      display: block;
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+    &__label-wrapper {
+      margin-bottom: 30px;
+      display: block;
+    }
+
+    &__inner {
+      padding: 0 10px;
+    }
+
+    &__menu-list {
+      margin-bottom: 30px;
+    }
+
+    &__btn {
+      padding: 10px 58px 10px 25px;
+      text-transform: lowercase;
+
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+
+    &__subline {
+      padding-bottom: 102px;
+    }
+
+    &__inner-bottom {
+      margin-top: -123px;
+      gap: 47px;
+      grid-template-rows: auto auto;
+    }
+  }
+
+  // -----------------------------------------------
+  // TAGS
+  // -----------------------------------------------
+  .tags {
+    &__list {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+
+    &__item {
+      margin-bottom: 30px;
+    }
+  }
+  // -----------------------------------------------
+  // MENU
+  // -----------------------------------------------
+  .menu {
+    &__link {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+}

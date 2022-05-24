@@ -1,0 +1,16 @@
+extends ../../../layouts/main.pug
+
+block variables
+  - const currentUrl = '/zoos';
+  - const imgUrl = "../../../assets";
+  - const cssUrl = "../main.css";
+  - const jsUrl = "../script.js";
+  - const generalJs = "../../script.js";
+
+block content
+  .wrapper
+    article.zoos
+      include ../../../sections/zoos/panda/_panda-aside.pug
+      include ../../../sections/zoos/panda/_panda-cam.pug
+      include ../../../sections/zoos/panda/_panda-donate.pug
+      include ../../../sections/zoos/panda/_panda-know.pug

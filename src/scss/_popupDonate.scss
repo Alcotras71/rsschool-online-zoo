@@ -1,0 +1,381 @@
+$height: 65px;
+
+.popupDonate {
+  &__content {
+    max-width: 920px;
+    width: 920px;
+  }
+
+  &__title {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 51px;
+    color: $white;
+    background: $orange;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 42px 0;
+    margin-bottom: 50px;
+  }
+
+  &__body {
+    transition: $transition;
+
+    &.hide {
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  &__info {
+    margin-bottom: 40px;
+  }
+
+  &__info-text {
+    padding: 0 120px;
+    font-weight: 600;
+    padding-bottom: 10px;
+  }
+
+  &__info-line {
+    width: 100%;
+    height: 1px;
+    background: #a4a8ae;
+  }
+}
+
+.popup-donation {
+  padding: 0 120px;
+
+  &__title {
+    padding-bottom: 10px;
+
+    span {
+      color: $aqua;
+    }
+  }
+
+  &__inner-btn {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  &__btn {
+    width: 80px;
+    padding: 20px 0;
+
+    &--big {
+      width: 200px;
+      text-transform: uppercase;
+    }
+
+    &.active {
+      background: $aqua;
+    }
+  }
+
+  &__input {
+    margin-top: 10px;
+    width: 100%;
+    padding: 20px;
+
+    &[type="text"] {
+      margin-bottom: 50px;
+    }
+
+    &[type="email"] {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 50px;
+  }
+
+  &__other-amount,
+  &__special-pet {
+    margin-bottom: 40px;
+    display: flex;
+  }
+
+  &__other-amount button {
+    background: $aqua;
+
+    &:hover {
+      background: $dark-aqua;
+    }
+  }
+
+  &__other-amount button.active {
+    background: $aqua;
+  }
+
+  &__input-amount {
+    margin-left: 40px;
+    width: 200px;
+    height: $height;
+    padding-left: 35px;
+    border: 1px solid $black;
+    border-radius: 5px;
+  }
+
+  &__select-wrap {
+    margin-left: 40px;
+    width: 65%;
+  }
+
+  &__checkbox {
+    margin-bottom: 50px;
+
+    label {
+      display: flex;
+      align-items: center;
+    }
+
+    input {
+      margin-right: 20px;
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  &__footer {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 575px;
+    align-items: center;
+
+    &--last {
+      max-width: 680px;
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: space-between;
+    width: 50px;
+    align-items: center;
+  }
+
+  &__pagination-item {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid $aqua;
+    transition: $transition;
+
+    &.active {
+      background: $aqua;
+    }
+
+    &:hover {
+      background: $aqua;
+    }
+  }
+
+  &__btn--next {
+    width: 200px;
+    height: 74px;
+    padding-left: 57px;
+
+    &:after {
+      right: 55px;
+    }
+  }
+
+  &__btn--complete {
+    padding-left: 55px;
+    padding-right: 90px;
+
+    &:disabled {
+      background: $light-orange;
+    }
+  }
+
+  &__btn--prev {
+    width: 200px;
+    height: 74px;
+    text-transform: lowercase;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__credit-card {
+    width: 65%;
+    margin-right: 40px;
+  }
+
+  &__cvv {
+    width: 30%;
+  }
+
+  &__inner-top {
+    margin-bottom: 50px;
+  }
+
+  &__cardNum-wrap {
+    width: 30%;
+    margin-right: 40px;
+    margin-bottom: 100px;
+  }
+}
+
+.select {
+  position: relative;
+  font-size: 18px;
+  line-height: 150%;
+  z-index: 100;
+
+  &__input {
+    width: calc(100% - 32px);
+    height: $height;
+    border: 1px solid $black;
+    border-right: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 5;
+  }
+
+  &__input-wrap {
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 32px;
+      background-color: $light-aqua;
+      border: 1px solid $black;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      transition: $transition;
+      z-index: 5;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 5px;
+      width: 11px;
+      height: 11px;
+      border-bottom: 1px solid $black;
+      border-right: 1px solid $black;
+      transform: translate(-50%, -60%) rotate(45deg);
+      z-index: 6;
+      transition: $transition;
+    }
+
+    &:hover:after {
+      background: $aqua;
+    }
+  }
+
+  &__dropdown {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-$height);
+    position: absolute;
+    border: 1px solid $black;
+    border-top: none;
+    top: $height;
+    width: 100%;
+    left: 0;
+    padding: 20px 0;
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 5px;
+    background: $white;
+    transition: $transition;
+
+    &::-webkit-scrollbar {
+      width: 32px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $light-aqua;
+      transition: $transition;
+
+      &:hover {
+        background: $aqua;
+      }
+    }
+
+    &::-webkit-scrollbar-button {
+      background: $white;
+      height: 30px;
+    }
+
+    &::-webkit-scrollbar-button:vertical:decrement {
+      background: url("#{$assets}/icons/scrollbar-arrow-up.svg") no-repeat center;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    &::-webkit-scrollbar-button:vertical:increment {
+      background: url("#{$assets}/icons/scrollbar-arrow-down.svg") no-repeat center;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  &__backdrop {
+    position: fixed;
+    display: none;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  &__item:not(.select__item:last-child) {
+    margin-bottom: 25px;
+  }
+
+  &__item {
+    padding: 5px 20px;
+    transition: $transition;
+    cursor: pointer;
+
+    &.selected {
+      background-color: $aqua;
+    }
+
+    &:hover {
+      background-color: $light-aqua;
+    }
+  }
+
+  &.open {
+    .select__dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .select__input-wrap {
+      &::before {
+        transform: translate(-50%, -40%) rotate(-135deg);
+      }
+    }
+
+    .select__backdrop {
+      display: block;
+    }
+  }
+}
